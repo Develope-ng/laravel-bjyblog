@@ -51,7 +51,7 @@ class SiteController extends Controller
         $result = $siteModel->storeData($data);
         if ($result) {
             // 更新缓存
-            Cache::forget('common:site');
+            Cache::forget('home:site');
         }
         return redirect('admin/site/index');
     }
@@ -96,7 +96,7 @@ class SiteController extends Controller
         $result = $siteModel->updateData($map, $data);
         if ($result) {
             // 更新缓存
-            Cache::forget('common:site');
+            Cache::forget('home:site');
         }
         return redirect()->back();
     }
@@ -122,7 +122,7 @@ class SiteController extends Controller
         $result = $siteModel->updateBatch($editData);
         if ($result) {
             // 更新缓存
-            Cache::forget('common:site');
+            Cache::forget('home:site');
         }
         return redirect()->back();
     }
